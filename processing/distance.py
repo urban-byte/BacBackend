@@ -2,7 +2,7 @@
 from typing import List
 import numpy as np
 
-from trajectories import get_height
+from .trajectories import get_height
 
 
 def normalized_distance(

@@ -3,9 +3,9 @@ import json
 from dataclasses import dataclass
 from typing import List, Set, Dict, Any
 
-from trajectories import trajectory_chunks_generator
-from distance import FrechetDistanceComputer
-from clustering import AvgLinkClustering
+from .trajectories import trajectory_chunks_generator
+from .distance import FrechetDistanceComputer
+from .clustering import AvgLinkClustering
 
 
 @dataclass(frozen=True)
