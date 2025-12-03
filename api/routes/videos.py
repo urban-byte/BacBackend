@@ -1,3 +1,4 @@
+import asyncio
 import os
 import uuid
 from typing import Optional, List
@@ -65,7 +66,7 @@ async def upload_video(file: UploadFile = File(...)):
     }
     save_index(idx)
 
-    import asyncio
+
     asyncio.create_task(
         run_yolo_processing(str(video_path), str(json_output_path))
     )
@@ -278,7 +279,7 @@ async def delete_video(video_id: str):
 @router.get("/{video_id}/group_boxes")
 async def get_group_boxes_endpoint(video_id: str):
     """
-    Returns a flat list of:
+    Returns a list of lists:
       {
         "id": [track_ids_in_group],
         "bbox": [x1, y1, x2, y2],

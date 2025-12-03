@@ -1,9 +1,7 @@
 # processing/detection.py
 import json
-import time
 from typing import List, Dict, Any, Optional
 
-import torch
 from ultralytics import YOLO
 
 
@@ -29,15 +27,12 @@ class YOLODetector:
         Runs YOLO tracking and stores all bounding boxes per frame to JSON.
         """
 
-        # IMPORTANT: stream=True → Ultralytics does NOT build a giant list in memory
         results = self.model.track(
             video_path,
             show=False,
             classes=self.classes,
-            persist=True,
-            stream=True,  # <--- add this
-            imgsz=640,  # optionally downscale for less memory/CPU
-            vid_stride=1,  # >1 to skip frames if you want to save more
+            persist=False,
+            stream=True,
         )
 
         frame_all: List[List[Dict[str, Any]]] = []

@@ -8,7 +8,7 @@ from services.video_service import ensure_dirs
 def create_app() -> FastAPI:
     ensure_dirs()
 
-    app = FastAPI(title="Video Uploader/Streamer", version="1.0.0")
+    app = FastAPI(title="Detection of groups of people in video", version="1.0.0")
 
     app.add_middleware(
         CORSMiddleware,
