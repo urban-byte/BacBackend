@@ -43,7 +43,6 @@ The result is a list of groups with frame spans and member IDs.
 ### Metadata & Analysis
 - `GET /videos/{id}/info`
 - `GET /videos/{id}/bbox_counts`
-- `GET /videos/{id}/track_ranges`
 - `GET /videos/{id}/groups`
 - `GET /videos/{id}/group_boxes`
 
